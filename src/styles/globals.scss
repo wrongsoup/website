@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/Manrope-ExtraLight.ttf");
+    font-weight: 200;
+}
+
+:root {
+    --fg-0: #E2D1CA;
+    --fg-1: #AD9F99;
+    --bg-0: #101214;
+    --bg-1: #14181A;
+
+    --champagne: #9CBCC4;
+    --mint: #9CC4B2;
+    --salmon: #C49CAF;
+
+    color: var(--fg-0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 200;
+}

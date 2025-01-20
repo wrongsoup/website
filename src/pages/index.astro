@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/globals.scss";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import titleGradient from "../assets/title_gradient.svg";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Wrong Soup</title>
+	</head>
+	<body>
+		<!-- Title section -->
+		<div class="title-section">
+			<div class="title-container">
+				<h1>Wrong Soup</h1>
+			</div>
+			<div class="gradients-container">
+				<img class="gradients" src={titleGradient.src} alt="Title Gradients" />
+				<div class="noise" />
+			</div>
+		</div>
+		<!-- Main Content -->
+		<div id="content" class="content">
+
+		</div>
+	</body>
+</html>
+
+<style lang="scss">
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.title-section {
+		height: 220px;
+	}
+
+	.title-container {
+		display: flex;
+		padding-left: 48px;
+		align-items: center;
+		height: 100%;
+
+		font-size: 3rem;
+	}
+
+	.gradients-container {
+		position: absolute;
+		pointer-events: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: -1;
+		background-color: var(--bg-0);
+		overflow: hidden;
+		
+		.noise {
+			background-image: url("/noise.bmp");
+			background-size: 800px 800px;
+			height: 100%;
+			mix-blend-mode: color-burn;
+			filter: blur(0.5px) contrast(0.8);
+		}
+		.gradients {
+			filter: blur(64px);
+			position: absolute;
+			top: -100px;
+			right: -60px;
+			width: 1400px;
+			height: 500px;
+		}
+	}
+
+	.content {
+		width: 100%;
+		height: 100%;
+		background-color: var(--bg-0);
+	}
+</style>
